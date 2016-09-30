@@ -1,0 +1,17 @@
+<launch>
+  <arg name="world_file"  default="$(find chris_create_navigation)/worlds/creech_map.world"/>
+  <arg name="gui"               default="true"/>
+  <arg name="initial_pose_x"    default="0.0"/>
+  <arg name="initial_pose_y"    default="0.0"/>
+  <arg name="initial_pose_a"    default="0.0"/>
+
+  <!-- Start up simulation with CHRIS Create model and designated data -->
+  <include file="$(find chris_create_bringup)/launch/gazebo_empty_world.launch">
+    <arg name="gui"             value="$(arg gui)" />
+    <arg name="world_file"      value="$(arg world_file)"/>
+    <arg name="initial_pose_x"  value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y"  value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a"  value="$(arg initial_pose_a)"/>
+ </include>
+  
+</launch>

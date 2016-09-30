@@ -1,0 +1,19 @@
+<launch>
+  <arg name="custom_param_file" default="$(find chris_create_navigation)/param/dummy.yaml"/>
+  <arg name="map_file"          default="$(find chris_create_navigation)/maps/empty.yaml"/>
+  <arg name="scan_topic"        default="/hokuyo_node/scan"/>
+
+  <!-- Map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- Localization -->
+  <include file="$(find chris_create_bringup)/launch/fake_localization.launch"/>
+
+  <!-- Planning and control -->
+  <include file="$(find chris_create_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+    <arg name="laser_topic"       value="$(arg scan_topic)" />
+  </include>
+
+</launch>
+

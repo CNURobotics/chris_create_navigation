@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="scan_topic"     default="/hokuyo_node/scan"/> 
+  <include file="$(find chris_create_navigation)/launch/includes/gmapping.launch.xml">
+     <arg name="scan_topic"   value="$(arg scan_topic)"/> 
+  </include>	
+
+  <include file="$(find chris_create_navigation)/launch/includes/move_base.launch.xml">
+     <arg name="laser_topic" value="$(arg scan_topic)" />
+  </include>
+
+</launch>
