@@ -1,6 +1,6 @@
 <launch>
   <arg name="custom_param_file" default="$(find chris_create_navigation)/param/dummy.yaml"/>
-  <arg name="map_file"          default="$(optenv CHRIS_MAP_FILE)"/>
+  <arg name="map_file"          default="$(optenv CHRIS_CREATE_MAP_FILE)"/>
   <arg name="initial_pose_x"    default="0.0"/>
   <arg name="initial_pose_y"    default="0.0"/>
   <arg name="initial_pose_a"    default="0.0"/>
@@ -15,7 +15,7 @@
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
-    <arg name="scan_topic"     value="$(arg scan_topic)"/> 
+    <arg name="scan_topic"     value="$(arg scan_topic)"/>
   </include>
 
   <!-- Planning and control -->
@@ -25,4 +25,3 @@
   </include>
 
 </launch>
-

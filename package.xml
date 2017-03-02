@@ -10,7 +10,7 @@
   <author>David Conner</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
   <build_depend>tf</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>sensor_msgs</build_depend>
@@ -19,11 +19,12 @@
   <run_depend>roscpp</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>move_base</run_depend>
-  <run_depend>map_server</run_depend>  
+  <run_depend>map_server</run_depend>
   <run_depend>amcl</run_depend>
   <run_depend>gmapping</run_depend>
   <run_depend>chris_create_bringup</run_depend>
   <run_depend>dwa_local_planner</run_depend>
+  <run_depend>chris_world_models</run_depend>
 
   <export>
 
